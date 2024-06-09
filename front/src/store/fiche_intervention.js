@@ -4,22 +4,22 @@ import { deleteRequestWithHeader, getRequestWithHeader, postRequestWithHeader, p
 
 
 
-// export const filterfiche_interventions_lastname = createAsyncThunk(
-//   "filterfiche_interventions_lastname",
-//   async (str) => {
-//     try {
-//       const res = await getRequestWithHeader("employees");
-//       return res.data.filter((elem) => {
-//         return (
-//           elem.OrderReparation?.title.toUpperCase().includes(str.toUpperCase()) ||
-//           elem.OrderReparation?.description.toUpperCase().includes(str.toUpperCase())
-//         );
-//       });
-//     } catch (error) {
-//       console.log(error);
-//     }
-//   }
-// );
+export const filterfiche_interventions_lastname = createAsyncThunk(
+  "filterfiche_interventions_lastname",
+  async (str) => {
+    try {
+      const res = await getRequestWithHeader("fiche-interventions");
+      return res.data.filter((elem) => {
+        return (
+          elem.OrderReparation?.title.toUpperCase().includes(str.toUpperCase()) ||
+          elem.OrderReparation?.description.toUpperCase().includes(str.toUpperCase())
+        );
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  }
+);
 
 export const getfiche_interventions = createAsyncThunk("getfiche_interventions", async () => {
     try {

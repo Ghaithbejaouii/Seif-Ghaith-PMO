@@ -17,6 +17,7 @@ import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { Link, useNavigate } from "react-router-dom";
 import {
   deletefiche_intervention,
+  filterfiche_interventions_lastname,
   getfiche_interventions,
 } from "../../../store/fiche_intervention";
 import FicheDetails from "./FicheDetails";
@@ -146,13 +147,13 @@ function Fiche_intervention() {
           </div>
         </div>
         <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
-          {/* <div className="w-full md:w-72">
+          <div className="w-full md:w-72">
                 <Input
                   onChange={(e) => dispatch(filterfiche_interventions_lastname(e.target.value))}
                   label="Search"
                   icon={<MagnifyingGlassIcon className="h-5 w-5" />}
                 />
-              </div> */}
+              </div>
         </div>
       </CardHeader>
       <CardBody>

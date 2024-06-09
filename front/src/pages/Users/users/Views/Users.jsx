@@ -1,6 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 
 import { useEffect, useState } from "react";
+import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 
 import {
   Card,
@@ -8,13 +9,15 @@ import {
   Typography,
   CardBody,
   Button,
+  Input,
 } from "@material-tailwind/react";
 
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 
 import { Link, useNavigate } from "react-router-dom";
-import { getUsers, updateUser } from "../../../../store/user";
+import { filteruser_lastname, getUsers, updateUser } from "../../../../store/user";
 import { ToastContainer, toast } from "react-toastify";
+
 
 export default function Users() {
   const dispatch = useDispatch();
@@ -176,13 +179,13 @@ export default function Users() {
         </div>
         <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
           <div className="w-full md:w-72">
-            {/* <Input
+            <Input
               label="Search"
               icon={<MagnifyingGlassIcon className="h-5 w-5" />}
               onChange={(e) =>
-                dispatch(filteremployees_lastname(e.target.value))
+                dispatch(filteruser_lastname(e.target.value))
               }
-            /> */}
+            />
           </div>
         </div>
       </CardHeader>

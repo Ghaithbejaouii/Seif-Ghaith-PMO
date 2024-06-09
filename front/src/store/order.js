@@ -11,10 +11,10 @@ export const filterorder= createAsyncThunk(
 
     return res.data.filter((elem) => {
         return (
-          elem.Client.first_name?.toUpperCase().includes(str.toUpperCase()) ||
-          elem.total.toString().toUpperCase().includes(str.toUpperCase()) ||
-          elem.invoiceNumber.toString().toUpperCase().includes(str.toUpperCase())  ||
-          elem.subTotal.toString().toUpperCase().includes(str.toUpperCase()) 
+          elem.Client.first_name?.toUpperCase().includes(str.toUpperCase()) 
+          // elem.total.toString().toUpperCase().includes(str.toUpperCase()) ||
+          // elem.invoiceNumber.toString().toUpperCase().includes(str.toUpperCase())  ||
+          // elem.subTotal.toString().toUpperCase().includes(str.toUpperCase()) 
         );
       });
     

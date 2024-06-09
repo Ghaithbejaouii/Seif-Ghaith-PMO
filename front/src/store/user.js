@@ -5,6 +5,27 @@ import {
   postRequestWithHeader,
   putRequestWithHeader,
 } from "../helpers/axiosRequests";
+export const filteruser_lastname= createAsyncThunk(
+  "filteruser_lastname",
+  async (str) => {
+    try {
+      const res = await getRequestWithHeader("users");
+
+    return res.data.filter((elem) => {
+        return (
+          elem.Employee.first_name?.toUpperCase().includes(str.toUpperCase()) ||
+          elem.Client.first_name?.toUpperCase().includes(str.toUpperCase()) ||
+          elem.email?.toUpperCase().includes(str.toUpperCase()) 
+          // elem.invoiceNumber.toString().toUpperCase().includes(str.toUpperCase())  ||
+          // elem.subTotal.toString().toUpperCase().includes(str.toUpperCase()) 
+        );
+      });
+    
+    } catch (error) {
+      console.log(error);
+    }
+  }
+);
 
 export const getUsers = createAsyncThunk("getUsers", async () => {
   try {

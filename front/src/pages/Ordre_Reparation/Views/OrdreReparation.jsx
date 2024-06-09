@@ -15,7 +15,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { Link, useNavigate } from "react-router-dom";
-import { getorderreparations } from "../../../store/order_reparation";
+import { filterOrder, getorderreparations } from "../../../store/order_reparation";
 import OrderReparationDetails from "./OrdeReparationDetails";
 
 function OrdreReparation() {
@@ -196,9 +196,9 @@ function OrdreReparation() {
         <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
           <div className="w-full md:w-72">
             <Input
-              //    onChange={(e) =>
-              //       dispatch(filterentree_lastname(e.target.value))
-              //   }
+                 onChange={(e) =>
+                    dispatch(filterOrder(e.target.value))
+                }
               label="Search"
               icon={<MagnifyingGlassIcon className="h-5 w-5" />}
             />

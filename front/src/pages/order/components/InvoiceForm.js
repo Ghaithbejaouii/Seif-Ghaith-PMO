@@ -263,7 +263,7 @@ function InvoiceForm() {
                 }
                 renderInput={(params) => (
                   <TextField
-                    {...params}
+                    {...params} 
                     fullWidth
                     variant="outlined"
                     onChange={(e) => {

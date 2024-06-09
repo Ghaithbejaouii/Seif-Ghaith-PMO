@@ -6,6 +6,26 @@ import {
   putRequestWithHeader,
 } from "../helpers/axiosRequests";
 
+export const filterOrder = createAsyncThunk(
+  "filterOrder",
+  async (str) => {
+    try {
+      const res = await getRequestWithHeader("orderreparations");
+    return res.data.filter((elem) => {
+        return (
+          elem.Client.first_name?.toUpperCase().includes(str.toUpperCase()) ||
+          elem.Client.last_name?.toUpperCase().includes(str.toUpperCase()) ||
+          elem.titel?.toUpperCase().includes(str.toUpperCase())
+          
+        );
+      });
+    
+    } catch (error) {
+      console.log(error);
+    }
+  }
+);
+
 export const getorderreparations = createAsyncThunk(
   "getorderreparations",
   async () => {
